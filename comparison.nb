@@ -1,0 +1,643 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19621,        633]
+NotebookOptionsPosition[     18603,        607]
+NotebookOutlinePosition[     18997,        623]
+CellTagsIndexPosition[     18954,        620]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9422269515289392`*^9, 
+  3.9422269820401897`*^9}},ExpressionUUID->"b916f9f5-05fe-40f3-80b9-\
+f396385aca00"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"J", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", 
+       ",", "0.", ",", "0."}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "0.", ",", "1.", ",", "1.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", 
+       ",", "0.", ",", "0."}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "0.", ",", "0.", ",", "1.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", 
+       ",", "0.", ",", "0."}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "0.", ",", "0.", ",", "0.", ",", "2.", ",", "0.", ",", "0.", ",", "0.", 
+       ",", "0.", ",", "0."}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "0.", ",", "0.", ",", "0.", ",", "0.", ",", "3.", ",", "0.", ",", "0.", 
+       ",", "0.", ",", "0."}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", ",", "4.", ",", "1.", 
+       ",", "0.", ",", "0."}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", ",", "4.", 
+       ",", "1.", ",", "0."}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", 
+       ",", "4.", ",", "1."}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", ",", "0.", 
+       ",", "0.", ",", "4."}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"J", "//", "MatrixForm"}]}], "Input",
+ CellChangeTimes->{{3.9422269937981997`*^9, 3.942227016961628*^9}, {
+  3.942228555778372*^9, 3.9422285660165033`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"1f77338b-1acc-4107-a521-c137b0b6746c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`"},
+     {"0.`", "1.`", "1.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`"},
+     {"0.`", "0.`", "1.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`"},
+     {"0.`", "0.`", "0.`", "2.`", "0.`", "0.`", "0.`", "0.`", "0.`"},
+     {"0.`", "0.`", "0.`", "0.`", "3.`", "0.`", "0.`", "0.`", "0.`"},
+     {"0.`", "0.`", "0.`", "0.`", "0.`", "4.`", "1.`", "0.`", "0.`"},
+     {"0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "4.`", "1.`", "0.`"},
+     {"0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "4.`", "1.`"},
+     {"0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "4.`"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.942227017388328*^9, 3.94222856727559*^9},
+ CellLabel->
+  "Out[10]//MatrixForm=",ExpressionUUID->"dc35a41a-5c06-4bb6-a443-\
+f0164c6cb9f0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"func", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], "*", 
+   RowBox[{"Cos", "[", "x", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"NumberForm", "[", 
+  RowBox[{
+   RowBox[{"MatrixFunction", "[", 
+    RowBox[{"func", ",", "J"}], "]"}], ",", "2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.942227019819689*^9, 3.942227028836911*^9}, {
+  3.942227228047433*^9, 3.9422272439253273`*^9}, {3.9422285295728693`*^9, 
+  3.9422287191910553`*^9}, {3.942228762669681*^9, 3.9422287824787292`*^9}, {
+  3.942228850719688*^9, 3.942228939604143*^9}},
+ CellLabel->"In[72]:=",ExpressionUUID->"84b3d4c9-a337-4052-9814-f40d9b3ab56e"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.45\"\>",
+        ShowStringCharacters->False],
+       0.4546487134128409,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"-0.42\"\>",
+        ShowStringCharacters->False],
+       -0.4161468365471424,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.45\"\>",
+        ShowStringCharacters->False],
+       0.4546487134128409,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"-0.38\"\>",
+        ShowStringCharacters->False],
+       -0.37840124765396416`,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"-0.14\"\>",
+        ShowStringCharacters->False],
+       -0.13970774909946293`,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.49\"\>",
+        ShowStringCharacters->False],
+       0.4946791233116909,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"-0.15\"\>",
+        ShowStringCharacters->False],
+       -0.14550003380861354`,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"-0.99\"\>",
+        ShowStringCharacters->False],
+       -0.9893582466233818,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.097\"\>",
+        ShowStringCharacters->False],
+       0.09700002253907569,
+       AutoDelete->True]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.49\"\>",
+        ShowStringCharacters->False],
+       0.4946791233116909,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"-0.15\"\>",
+        ShowStringCharacters->False],
+       -0.14550003380861354`,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"-0.99\"\>",
+        ShowStringCharacters->False],
+       -0.9893582466233818,
+       AutoDelete->True]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.49\"\>",
+        ShowStringCharacters->False],
+       0.4946791233116909,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"-0.15\"\>",
+        ShowStringCharacters->False],
+       -0.14550003380861354`,
+       AutoDelete->True]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.\"\>",
+        ShowStringCharacters->False],
+       0.,
+       AutoDelete->True], ",", 
+      InterpretationBox[
+       StyleBox["\<\"0.49\"\>",
+        ShowStringCharacters->False],
+       0.4946791233116909,
+       AutoDelete->True]}], "}"}]}], "}"}],
+  NumberForm[#, 2]& ]], "Output",
+ CellChangeTimes->{{3.9422270256705713`*^9, 3.942227029260455*^9}, 
+   3.942227244105287*^9, 3.942228532500382*^9, {3.942228578885991*^9, 
+   3.9422286043644047`*^9}, 3.942228641200643*^9, {3.9422286771640873`*^9, 
+   3.94222871201035*^9}, {3.942228765397797*^9, 3.942228782704809*^9}, {
+   3.942228854034191*^9, 3.942228940093285*^9}},
+ CellLabel->
+  "Out[73]//NumberForm=",ExpressionUUID->"f601c758-467c-4a4c-ba29-\
+b6b31ffca787"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.9422289429116697`*^9, 3.9422289434157667`*^9}},
+ CellLabel->"In[74]:=",ExpressionUUID->"1c8fa590-a7a9-4ce8-bcb9-1f43442728e6"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`"},
+     {"0.`", "0.4546487134128409`", 
+      RowBox[{"-", "0.4161468365471424`"}], "0.`", "0.`", "0.`", "0.`", "0.`",
+       "0.`"},
+     {"0.`", "0.`", "0.4546487134128409`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+      "0.`"},
+     {"0.`", "0.`", "0.`", 
+      RowBox[{"-", "0.37840124765396416`"}], "0.`", "0.`", "0.`", "0.`", 
+      "0.`"},
+     {"0.`", "0.`", "0.`", "0.`", 
+      RowBox[{"-", "0.13970774909946293`"}], "0.`", "0.`", "0.`", "0.`"},
+     {"0.`", "0.`", "0.`", "0.`", "0.`", "0.4946791233116909`", 
+      RowBox[{"-", "0.14550003380861354`"}], 
+      RowBox[{"-", "0.9893582466233818`"}], "0.09700002253907569`"},
+     {"0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.4946791233116909`", 
+      RowBox[{"-", "0.14550003380861354`"}], 
+      RowBox[{"-", "0.9893582466233818`"}]},
+     {"0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.4946791233116909`", 
+      
+      RowBox[{"-", "0.14550003380861354`"}]},
+     {"0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+      "0.4946791233116909`"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.942228944166751*^9},
+ CellLabel->
+  "Out[74]//MatrixForm=",ExpressionUUID->"7dbebfb5-7de1-4bbc-993e-\
+6d19ef074cc2"]
+}, Open  ]]
+},
+WindowSize->{701.25, 758.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"20965390-e1f8-46f2-8ceb-ebe77010797c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 156, 3, 29, "Input",ExpressionUUID->"b916f9f5-05fe-40f3-80b9-f396385aca00"],
+Cell[CellGroupData[{
+Cell[739, 27, 1768, 44, 130, "Input",ExpressionUUID->"1f77338b-1acc-4107-a521-c137b0b6746c"],
+Cell[2510, 73, 1237, 26, 181, "Output",ExpressionUUID->"dc35a41a-5c06-4bb6-a443-f0164c6cb9f0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3784, 104, 672, 14, 50, "Input",ExpressionUUID->"84b3d4c9-a337-4052-9814-f40d9b3ab56e"],
+Cell[4459, 120, 12203, 435, 169, "Output",ExpressionUUID->"f601c758-467c-4a4c-ba29-b6b31ffca787"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16699, 560, 212, 3, 29, "Input",ExpressionUUID->"1c8fa590-a7a9-4ce8-bcb9-1f43442728e6"],
+Cell[16914, 565, 1673, 39, 181, "Output",ExpressionUUID->"7dbebfb5-7de1-4bbc-993e-6d19ef074cc2"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
